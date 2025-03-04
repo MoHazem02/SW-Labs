@@ -17,11 +17,17 @@ class TestParachuteSystem(unittest.TestCase):
 
     # TODO 1: Test deploy function with too low altitude
     # Call deploy(30, 100) and assert that the result is "Too low to deploy".
+    def test_deploy_too_low(self):
+        self.assertEqual(ParachuteSytem.deploy(30, 100), "Too low to deploy")
 
     # TODO 2: Test calculate_landing_impact function
     # calculate the landing impact using speed =50, and altitude = 100 and assert that the result is 500.
+    def test_calculate_landing_impact(self):
+        self.assertEqual(ParachuteSytem.calculate_landing_impact(50, 100), 500)
 
     # TODO 3: Test is_safe_landing function
+    def test_is_safe_landing(self):
+        self.assertFalse(ParachuteSytem.is_safe_landing(70, 100))    
 
 
 if __name__ == '__main__':

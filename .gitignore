@@ -129,3 +129,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 Lab 4/Testing slides.pdf
+*__pycache__/
