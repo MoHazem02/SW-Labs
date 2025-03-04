@@ -25,12 +25,16 @@ print(f'First search result: {first_result.text}')
 
 # TODO Assert finding 'The Batman' Movie 
 # Step 1: Click on the first search result to open the movie page.
+first_result.click()
 # Step 2: Wait for the page to fully load.
+time.sleep(2)
 # Step 3: Locate the movie title on the new page.
+movie_title = driver.find_element(By.CLASS_NAME, "hero__primary-text")
 # Step 4: Verify that the movie title matches the original search query.
+print(f'Movie title: {movie_title.text}')
 # Step 5: Use an assert statement to check if the correct movie page opened.
-
-# print("Test Passed: IMDb search works correctly!")
+assert movie_title.text == "The Batman", "Test Failed: Incorrect movie page opened!"
+print("Test Passed: Correct movie page opened!")
 
 # Cleanup: Close the browser
 driver.quit()
